@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "createdieselgenerators:block/asphalt",
-    "side": "createdieselgenerators:block/asphalt",
-    "top": "createdieselgenerators:block/asphalt"
-  }
-}

@@ -43,9 +43,6 @@ public class CDGCreativeTab {
                         output.accept(CDGBlocks.CANISTER.get());
                         output.accept(CDGBlocks.OIL_BARREL.get());
                         output.accept(CDGBlocks.BASIN_LID.get());
-                        output.accept(CDGBlocks.ASPHALT_BLOCK.get());
-                        output.accept(CDGBlocks.ASPHALT_STAIRS.get());
-                        output.accept(CDGBlocks.ASPHALT_SLAB.get());
                         output.accept(CDGBlocks.BULK_FERMENTER.get());
                         output.accept(CDGBlocks.ANDESITE_GIRDER.get());
                         if (ModList.get().isLoaded("struts"))

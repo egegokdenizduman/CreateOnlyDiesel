@@ -294,34 +294,6 @@ public class CDGBlocks {
             .tag(ItemTags.WOODEN_STAIRS).build()
             .register();
 
-    public static final BlockEntry<Block> ASPHALT_BLOCK = REGISTRATE.block("asphalt_block", Block::new)
-            .initialProperties(SharedProperties::stone)
-            .properties(p -> p.mapColor(MapColor.COLOR_BLACK))
-            .properties(p -> p.speedFactor(1.25f))
-            .transform(pickaxeOnly())
-            .blockstate((c, p) -> p.simpleBlock(c.get(), p.models()
-                    .cubeAll(c.getName(), p.modLoc("block/asphalt"))))
-            .simpleItem()
-            .register();
-
-    public static final BlockEntry<SlabBlock> ASPHALT_SLAB = REGISTRATE.block("asphalt_slab", SlabBlock::new)
-            .initialProperties(SharedProperties::stone)
-            .properties(p -> p.mapColor(MapColor.COLOR_BLACK))
-            .properties(p -> p.speedFactor(1.25f))
-            .transform(pickaxeOnly())
-            .blockstate((c, p) -> p.slabBlock(c.getEntry(), p.modLoc("block/asphalt_block"), p.modLoc("block/asphalt")))
-            .loot((lt, b) -> lt.add(b, lt.createSlabItemTable(b)))
-            .simpleItem()
-            .register();
-
-    public static final BlockEntry<StairBlock> ASPHALT_STAIRS = REGISTRATE.block("asphalt_stairs", p -> new StairBlock(Blocks.ANDESITE_STAIRS.defaultBlockState(), p))
-            .initialProperties(SharedProperties::stone)
-            .properties(p -> p.mapColor(MapColor.COLOR_BLACK))
-            .properties(p -> p.speedFactor(1.25f))
-            .transform(pickaxeOnly())
-            .blockstate((c, p) -> p.stairsBlock(c.getEntry(), p.modLoc("block/asphalt")))
-            .simpleItem()
-            .register();
 
     public static final BlockEntry<AndesiteGirderBlock> ANDESITE_GIRDER =
             REGISTRATE.block("andesite_girder", AndesiteGirderBlock::new)
