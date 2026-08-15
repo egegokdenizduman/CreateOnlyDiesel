@@ -35,11 +35,6 @@ public class CDGCreativeTab {
                         output.accept(CDGBlocks.PUMPJACK_BEARING.get());
                         output.accept(CDGBlocks.PUMPJACK_CRANK.get());
                         output.accept(CDGBlocks.PUMPJACK_HEAD.get());
-                        output.accept(CDGItems.WOOD_CHIPS.get());
-                        output.accept(CDGBlocks.CHIP_WOOD_BEAM.get());
-                        output.accept(CDGBlocks.CHIP_WOOD_BLOCK.get());
-                        output.accept(CDGBlocks.CHIP_WOOD_STAIRS.get());
-                        output.accept(CDGBlocks.CHIP_WOOD_SLAB.get());
                         output.accept(CDGBlocks.CANISTER.get());
                         output.accept(CDGBlocks.OIL_BARREL.get());
                         output.accept(CDGBlocks.BASIN_LID.get());
@@ -56,7 +51,6 @@ public class CDGCreativeTab {
                         output.accept(CDGFluids.GASOLINE.getBucket().get());
                         output.accept(CDGFluids.PLANT_OIL.getBucket().get());
                         output.accept(CDGFluids.ETHANOL.getBucket().get());
-                        output.accept(CDGItems.KELP_HANDLE.get());
                         output.accept(CDGItems.LIGHTER.get());
                         output.accept(CDGItems.CHEMICAL_SPRAYER.get());
                         output.accept(CDGItems.CHEMICAL_SPRAYER_LIGHTER.get());

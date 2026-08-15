@@ -262,39 +262,6 @@ public class CDGBlocks {
             .build()
             .register();
 
-    public static final BlockEntry<RotatedPillarBlock> CHIP_WOOD_BLOCK = REGISTRATE.block("chip_wood_block", RotatedPillarBlock::new)
-            .initialProperties(() -> Blocks.OAK_PLANKS)
-            .tag(BlockTags.PLANKS)
-            .transform(axeOnly())
-            .blockstate((c, p) -> p.axisBlock(c.getEntry(), p.modLoc("block/chip_wood_block_side"), p.modLoc("block/chip_wood_block")))
-            .item().tag(ItemTags.PLANKS).build()
-            .register();
-
-    public static final BlockEntry<RotatedPillarBlock> CHIP_WOOD_BEAM = REGISTRATE.block("chip_wood_beam", RotatedPillarBlock::new)
-            .initialProperties(() -> Blocks.STRIPPED_OAK_LOG)
-            .transform(axeOnly())
-            .blockstate((c, p) -> p.logBlock(c.getEntry()))
-            .simpleItem()
-            .register();
-
-    public static final BlockEntry<SlabBlock> CHIP_WOOD_SLAB = REGISTRATE.block("chip_wood_slab", SlabBlock::new)
-            .initialProperties(() -> Blocks.OAK_SLAB)
-            .transform(axeOnly())
-            .blockstate((c, p) -> p.slabBlock(c.getEntry(), p.modLoc("block/chip_wood_block"), p.modLoc("block/chip_wood_block_side"), p.modLoc("block/chip_wood_block"), p.modLoc("block/chip_wood_block")))
-            .loot((lt, b) -> lt.add(b, lt.createSlabItemTable(b)))
-            .item()
-            .tag(ItemTags.WOODEN_SLABS).build()
-            .register();
-
-    public static final BlockEntry<StairBlock> CHIP_WOOD_STAIRS = REGISTRATE.block("chip_wood_stairs", p -> new StairBlock(Blocks.ANDESITE_STAIRS.defaultBlockState(), p))
-            .initialProperties(() -> Blocks.OAK_STAIRS)
-            .transform(axeOnly())
-            .blockstate((c, p) -> p.stairsBlock(c.getEntry(), p.modLoc("block/chip_wood_block_side"), p.modLoc("block/chip_wood_block"), p.modLoc("block/chip_wood_block")))
-            .item()
-            .tag(ItemTags.WOODEN_STAIRS).build()
-            .register();
-
-
     public static final BlockEntry<AndesiteGirderBlock> ANDESITE_GIRDER =
             REGISTRATE.block("andesite_girder", AndesiteGirderBlock::new)
                     .initialProperties(SharedProperties::softMetal)
