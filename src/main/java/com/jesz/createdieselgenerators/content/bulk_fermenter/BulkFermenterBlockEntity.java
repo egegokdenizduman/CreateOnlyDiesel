@@ -47,7 +47,6 @@ import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.wrapper.CombinedInvWrapper;
 import org.jetbrains.annotations.NotNull;
-import org.jspecify.annotations.NonNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.*;
@@ -736,7 +735,7 @@ public class BulkFermenterBlockEntity extends SmartBlockEntity implements IMulti
         }
 
         @Override
-        public @NonNull FluidStack getFluidInTank(int tank) {
+        public FluidStack getFluidInTank(int tank) {
             return tanks.get(tank).getFluid();
         }
 
@@ -746,12 +745,12 @@ public class BulkFermenterBlockEntity extends SmartBlockEntity implements IMulti
         }
 
         @Override
-        public boolean isFluidValid(int tank, @NonNull FluidStack stack) {
+        public boolean isFluidValid(int tank, FluidStack stack) {
             return true;
         }
 
         @Override
-        public int fill(@NonNull FluidStack resource, @NonNull FluidAction action) {
+        public int fill(FluidStack resource, FluidAction action) {
             for (FluidTank tank : tanks) {
                 if (FluidStack.isSameFluidSameComponents(tank.getFluid(), resource)) {
                     int result = tank.fill(resource, action);
@@ -773,7 +772,7 @@ public class BulkFermenterBlockEntity extends SmartBlockEntity implements IMulti
         }
 
         @Override
-        public @NonNull FluidStack drain(@NonNull FluidStack resource, @NonNull FluidAction action) {
+        public FluidStack drain(FluidStack resource, FluidAction action) {
             for (FluidTank tank : tanks) {
                 if (FluidStack.isSameFluidSameComponents(tank.getFluid(), resource)) {
                     FluidStack result = tank.drain(resource, action);
@@ -786,7 +785,7 @@ public class BulkFermenterBlockEntity extends SmartBlockEntity implements IMulti
         }
 
         @Override
-        public @NonNull FluidStack drain(int maxDrain, @NonNull FluidAction action) {
+        public FluidStack drain(int maxDrain, FluidAction action) {
             for (FluidTank tank : tanks) {
                 if (!tank.getFluid().isEmpty()) {
                     FluidStack result = tank.drain(maxDrain, action);
@@ -799,7 +798,7 @@ public class BulkFermenterBlockEntity extends SmartBlockEntity implements IMulti
         }
 
         @ParametersAreNonnullByDefault
-        public @NonNull CompoundTag writeToNBT(HolderLookup.Provider registries, CompoundTag compound) {
+        public CompoundTag writeToNBT(HolderLookup.Provider registries, CompoundTag compound) {
             ListTag list = new ListTag();
             for (FluidTank tank : tanks)
                 list.add(tank.writeToNBT(registries, new CompoundTag()));
@@ -810,7 +809,7 @@ public class BulkFermenterBlockEntity extends SmartBlockEntity implements IMulti
 
         @Override
         @ParametersAreNonnullByDefault
-        public @NonNull FluidTank readFromNBT(HolderLookup.Provider registries, CompoundTag tag) {
+        public FluidTank readFromNBT(HolderLookup.Provider registries, CompoundTag tag) {
             for (int i = 0; i < tanks.size(); i++) {
                 FluidTank tank = tanks.get(i);
                 tank.readFromNBT(registries, tag.getList("Tanks", Tag.TAG_COMPOUND).getCompound(i));
@@ -819,7 +818,7 @@ public class BulkFermenterBlockEntity extends SmartBlockEntity implements IMulti
         }
 
         @Override
-        public @NonNull FluidTank setCapacity(int capacity) {
+        public FluidTank setCapacity(int capacity) {
             for (FluidTank tank : tanks)
                 tank.setCapacity(capacity);
             return super.setCapacity(capacity);

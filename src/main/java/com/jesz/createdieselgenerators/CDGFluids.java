@@ -8,12 +8,7 @@ import net.minecraft.core.dispenser.DispenseItemBehavior;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraft.world.level.material.FlowingFluid;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
-import org.jspecify.annotations.NonNull;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.jesz.createdieselgenerators.CreateDieselGenerators.REGISTRATE;
 
@@ -129,7 +124,7 @@ public class CDGFluids {
     private static final DispenseItemBehavior DEFAULT = new DefaultDispenseItemBehavior();
     private static final DispenseItemBehavior DISPENSE_FLUID = new DefaultDispenseItemBehavior(){
         @Override
-        protected @NonNull ItemStack execute(BlockSource pSource, ItemStack pStack) {
+        protected ItemStack execute(BlockSource pSource, ItemStack pStack) {
             DispensibleContainerItem dispensibleContainerItem = (DispensibleContainerItem) pStack.getItem();
             BlockPos pos = pSource.pos().relative(pSource.state().getValue(DispenserBlock.FACING));
             Level level = pSource.level();
