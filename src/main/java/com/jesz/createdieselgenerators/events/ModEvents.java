@@ -110,13 +110,6 @@ public class ModEvents {
                 (stack, c) -> ((FueledToolItem)stack.getItem()).getFluidHandler(stack),
                 CDGBlocks.CANISTER);
 
-        for (FluidEntry<BaseFlowingFluid.Flowing> e : CDGFluids.CONCRETE) {
-            event.registerItem(
-                    Capabilities.FluidHandler.ITEM,
-                    (stack, c) -> new FluidBucketWrapper(stack),
-                    e.getBucket().orElseThrow()
-            );
-        }
         BulkFermenterBlockEntity.registerCapabilities(event);
         CanisterBlockEntity.registerCapabilities(event);
         DieselEngineBlockEntity.registerCapabilities(event);

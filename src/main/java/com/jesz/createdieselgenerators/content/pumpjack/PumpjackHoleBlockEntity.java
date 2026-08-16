@@ -3,7 +3,6 @@ package com.jesz.createdieselgenerators.content.pumpjack;
 import com.jesz.createdieselgenerators.CDGBlockEntityTypes;
 import com.jesz.createdieselgenerators.CDGTags;
 import com.jesz.createdieselgenerators.CreateDieselGenerators;
-import com.jesz.createdieselgenerators.content.concrete.ConcreteEncasedFluidPipeBlock;
 import com.jesz.createdieselgenerators.world.OilChunksSavedData;
 import com.mojang.datafixers.util.Pair;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
@@ -128,7 +127,7 @@ public class PumpjackHoleBlockEntity extends SmartBlockEntity implements IHaveGo
             for (int i = 0; i < getBlockPos().getY() - level.getMinBuildHeight(); i++) {
                 pipeLength++;
                 BlockState bs = level.getBlockState(getBlockPos().below(i + 1));
-                if (bs.getBlock() instanceof PipeBlock || bs.getBlock() instanceof EncasedPipeBlock || bs.getBlock() instanceof ConcreteEncasedFluidPipeBlock) {
+                if (bs.getBlock() instanceof PipeBlock || bs.getBlock() instanceof EncasedPipeBlock) {
                     if (!(bs.getValue(BlockStateProperties.UP) && bs.getValue(BlockStateProperties.DOWN)))
                         break;
                 } else if(bs.getBlock() instanceof GlassFluidPipeBlock) {

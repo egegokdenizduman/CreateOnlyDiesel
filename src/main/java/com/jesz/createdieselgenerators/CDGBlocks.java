@@ -8,7 +8,6 @@ import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermenterBlock
 import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermenterCTBehavior;
 import com.jesz.createdieselgenerators.content.canister.CanisterBlock;
 import com.jesz.createdieselgenerators.content.canister.CanisterBlockItem;
-import com.jesz.createdieselgenerators.content.concrete.ConcreteEncasedFluidPipeBlock;
 import com.jesz.createdieselgenerators.content.diesel_engine.huge.HugeDieselEngineBlock;
 import com.jesz.createdieselgenerators.content.diesel_engine.huge.PoweredEngineShaftBlock;
 import com.jesz.createdieselgenerators.content.diesel_engine.modular.ModularDieselEngineBlock;
@@ -39,7 +38,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -52,9 +50,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.jesz.createdieselgenerators.CreateDieselGenerators.REGISTRATE;
 import static com.simibubi.create.api.contraption.storage.fluid.MountedFluidStorageType.mountedFluidStorage;
@@ -242,66 +237,7 @@ public class CDGBlocks {
                                     .add(LootItem.lootTableItem(AllBlocks.SHAFT.get()))))))
                     .register();
 
-    public static final Map<DyeColor, BlockEntry<ConcreteEncasedFluidPipeBlock>> CONCRETE_ENCASED_FLUID_PIPES = new HashMap<>();
-    static {
-        for (DyeColor color : DyeColor.values()) {
-            CONCRETE_ENCASED_FLUID_PIPES.put(color,
-                REGISTRATE.block(color.getName() + "_concrete_encased_fluid_pipe", ConcreteEncasedFluidPipeBlock::new)
-                        .properties(p -> p.mapColor(color.getMapColor()).sound(SoundType.STONE))
-                        .transform(pickaxeOnly())
-                        .blockstate((c, p) -> {
-                            MultiPartBlockStateBuilder builder = p.getMultipartBuilder(c.get());
-                            builder.part()
-                                    .modelFile(p.models().getExistingFile(ResourceLocation.withDefaultNamespace("block/" + color.getName() + "_concrete")))
-                                    .addModel()
-                                    .end();
 
-                            builder.part()
-                                    .modelFile(p.models().getExistingFile(p.modLoc("block/concrete/concrete_encased_pipe_part")))
-                                    .addModel()
-                                    .condition(BlockStateProperties.NORTH, true)
-                                    .end();
-
-                            builder.part()
-                                    .modelFile(p.models().getExistingFile(p.modLoc("block/concrete/concrete_encased_pipe_part")))
-                                    .rotationX(90)
-                                    .addModel()
-                                    .condition(BlockStateProperties.DOWN, true)
-                                    .end();
-
-                            builder.part()
-                                    .modelFile(p.models().getExistingFile(p.modLoc("block/concrete/concrete_encased_pipe_part")))
-                                    .rotationX(270)
-                                    .addModel()
-                                    .condition(BlockStateProperties.UP, true)
-                                    .end();
-
-                            builder.part()
-                                    .modelFile(p.models().getExistingFile(p.modLoc("block/concrete/concrete_encased_pipe_part")))
-                                    .rotationY(90)
-                                    .addModel()
-                                    .condition(BlockStateProperties.EAST, true)
-                                    .end();
-
-                            builder.part()
-                                    .modelFile(p.models().getExistingFile(p.modLoc("block/concrete/concrete_encased_pipe_part")))
-                                    .rotationY(270)
-                                    .addModel()
-                                    .condition(BlockStateProperties.WEST, true)
-                                    .end();
-
-                            builder.part()
-                                    .modelFile(p.models().getExistingFile(p.modLoc("block/concrete/concrete_encased_pipe_part")))
-                                    .rotationY(180)
-                                    .addModel()
-                                    .condition(BlockStateProperties.SOUTH, true)
-                                    .end();
-                        })
-                        .loot((lt, block) -> lt.dropOther(block, AllBlocks.FLUID_PIPE))
-                        .register()
-            );
-        }
-    }
     public static void register() {
     }
 

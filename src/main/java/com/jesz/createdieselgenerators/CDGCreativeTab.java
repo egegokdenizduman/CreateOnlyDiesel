@@ -45,8 +45,6 @@ public class CDGCreativeTab {
                         output.accept(CDGFluids.ETHANOL.getBucket().get());
                         output.accept(CDGItems.TRACK_LAYERS_BAG.get());
                         output.accept(TrackLayersBagItem.full());
-                        for (var fluid : CDGFluids.CONCRETE)
-                            output.accept(fluid.getBucket().orElseThrow());
                     })
                     .build());
 

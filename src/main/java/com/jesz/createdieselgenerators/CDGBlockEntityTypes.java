@@ -29,10 +29,6 @@ import static com.jesz.createdieselgenerators.CreateDieselGenerators.REGISTRATE;
 public class CDGBlockEntityTypes {
 
 
-    public static final BlockEntityEntry<FluidPipeBlockEntity> CONCRETE_ENCASED_FLUID_PIPE = REGISTRATE.blockEntity("concrete_encased_fluid_pipe", FluidPipeBlockEntity::new)
-            .validBlocksDeferred(() -> new ArrayList<>(CDGBlocks.CONCRETE_ENCASED_FLUID_PIPES.values()))
-            .register();
-
     public static final BlockEntityEntry<DieselEngineBlockEntity> DIESEL_ENGINE = REGISTRATE.blockEntity("diesel_engine_tile_entity", DieselEngineBlockEntity::new)
             .visual(() -> ShaftVisual::new)
             .validBlocks(CDGBlocks.DIESEL_ENGINE)
