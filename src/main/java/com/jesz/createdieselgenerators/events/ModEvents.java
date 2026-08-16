@@ -126,13 +126,6 @@ public class ModEvents {
         PumpjackHoleBlockEntity.registerCapabilities(event);
     }
 
-    @SubscribeEvent
-    @OnlyIn(Dist.CLIENT)
-    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
-        CDGItems.HAMMER.get().registerExtension(event);
-        CDGItems.WIRE_CUTTERS.get().registerExtension(event);
-    }
-
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void clientInit(FMLClientSetupEvent event) {

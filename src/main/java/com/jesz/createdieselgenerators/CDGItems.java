@@ -2,8 +2,6 @@ package com.jesz.createdieselgenerators;
 
 import com.jesz.createdieselgenerators.content.distillation.DistillationControllerItem;
 import com.jesz.createdieselgenerators.content.tools.OilScannerItem;
-import com.jesz.createdieselgenerators.content.tools.hammer.HammerItem;
-import com.jesz.createdieselgenerators.content.tools.wire_cutters.WireCuttersItem;
 import com.jesz.createdieselgenerators.content.track_layers_bag.TrackLayersBagItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.item.AxeItem;
@@ -31,17 +29,6 @@ public class CDGItems {
             .onRegister(TrackLayersBagItem::registerModelOverrides)
             .model(TrackLayersBagItem::addOverrideModels)
             .register();
-
-    public static final ItemEntry<HammerItem> HAMMER = REGISTRATE.item("hammer", HammerItem::new)
-            .properties(p -> p.durability(128))
-            .properties(p -> p.attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)))
-            .model((c, p) -> p.handheldItem(c.getEntry()))
-            .register();
-
-    public static final ItemEntry<WireCuttersItem> WIRE_CUTTERS = REGISTRATE.item("wire_cutters", WireCuttersItem::new)
-            .properties(p -> p.durability(128))
-            .register();
-
 
     public static void register() {}
 }

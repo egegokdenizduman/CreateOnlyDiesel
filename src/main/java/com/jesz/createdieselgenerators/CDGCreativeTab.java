@@ -20,8 +20,6 @@ public class CDGCreativeTab {
                     .icon(CDGBlocks.DIESEL_ENGINE::asStack)
                     .displayItems((pParameters, output) -> {
                         output.accept(CDGItems.ENGINE_PISTON.get());
-                        output.accept(CDGItems.WIRE_CUTTERS.get());
-                        output.accept(CDGItems.HAMMER.get());
                         output.accept(CDGItems.ENGINE_SILENCER.get());
                         output.accept(CDGItems.ENGINE_TURBO.get());
                         output.accept(CDGBlocks.DIESEL_ENGINE.get());

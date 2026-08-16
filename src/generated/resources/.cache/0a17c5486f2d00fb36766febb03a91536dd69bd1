@@ -1,4 +1,4 @@
-// 1.21.1	2026-08-16T07:45:35.4475003	Registrate Provider for createdieselgenerators [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.21.1	2026-08-16T08:07:36.7889789	Registrate Provider for createdieselgenerators [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 515c47692d269b683b2f71229a92f9dda098148f assets/createdieselgenerators/blockstates/andesite_girder.json
 c04c217c8303f8e9da156ff8fd1e03579667db9f assets/createdieselgenerators/blockstates/andesite_girder_encased_shaft.json
 3be6b6b2755b4ab9ae0dbbaf80506b124cdaeeaf assets/createdieselgenerators/blockstates/andesite_girder_strut.json
@@ -53,8 +53,8 @@ a654ff138db894647a065452864a963777fecc08 assets/createdieselgenerators/blockstat
 cf38db33d42cfa06ccc89b53b6ed8ef05d06e356 assets/createdieselgenerators/blockstates/white_concrete_encased_fluid_pipe.json
 36119964183cbbf22c9c0e63b37fc5ffb3ea618b assets/createdieselgenerators/blockstates/yellow_cement.json
 c7a73129fc436da16afaeb04bd907e1ff3cc9dbf assets/createdieselgenerators/blockstates/yellow_concrete_encased_fluid_pipe.json
-aa909a9f0874bc88ed05be4e281d58345570aced assets/createdieselgenerators/lang/en_ud.json
-b0f2704a9e7cbb6e76779249a7dc7e5701ad9491 assets/createdieselgenerators/lang/en_us.json
+e551198fe4547cb618caf8b20a790b6eb4604218 assets/createdieselgenerators/lang/en_ud.json
+0f5a46111e9bf30e9487ddc50862c5db0de2d78e assets/createdieselgenerators/lang/en_us.json
 bb8c2d0fc3e42c66fcdf1d1601a35354b3bcb7b0 assets/createdieselgenerators/models/block/biodiesel.json
 46a9e8e97004a5e3408f6d0f431d3b45c4a829bd assets/createdieselgenerators/models/block/black_cement.json
 f6ffe028419e6581c89eb345bea7a060a4203462 assets/createdieselgenerators/models/block/blue_cement.json
@@ -98,7 +98,6 @@ c17c92c11d6cb12df6c4a03ecb9e0df088dd78eb assets/createdieselgenerators/models/it
 d17a88970cb8c75fdde9fb0e9ca26c254e77e905 assets/createdieselgenerators/models/item/gasoline_bucket.json
 8c1b6819839e14974051b01c49c581b88848bb3e assets/createdieselgenerators/models/item/gray_cement_bucket.json
 bbdb2b6459e1a5e306fd7b330d71d5a4872af5da assets/createdieselgenerators/models/item/green_cement_bucket.json
-f62fa58a86181bd33633c201b08ee286c7c6f9e3 assets/createdieselgenerators/models/item/hammer.json
 5df378afd5ed9c97f12439757aac22db4358dbc5 assets/createdieselgenerators/models/item/huge_diesel_engine.json
 da3a95c7861c20f9872d04af1f0ebf102d6efb53 assets/createdieselgenerators/models/item/large_diesel_engine.json
 95e4d8785ae3e178d2cd2001d54827fcfc92d0e2 assets/createdieselgenerators/models/item/light_blue_cement_bucket.json
@@ -121,7 +120,6 @@ ab58abf9256d9d76dfdaffd2c13ad1cf717be1b4 assets/createdieselgenerators/models/it
 f3674c180569f9890bfd4b6aff997beb43252217 assets/createdieselgenerators/models/item/track_layers_bag.json
 23e7605cdfa2fcf590f6fa4f7a9aee8206cc0f00 assets/createdieselgenerators/models/item/track_layers_bag_filled.json
 599a40e4b0c50577b66ee6797183cd3ccc2264bb assets/createdieselgenerators/models/item/white_cement_bucket.json
-c724de779f60d857e6dbc4d6c87a0e9cb7f8659e assets/createdieselgenerators/models/item/wire_cutters.json
 f30f5c14bdcc6becaeba14e9bd221c97b473b94f assets/createdieselgenerators/models/item/yellow_cement_bucket.json
 fec273b595da5e7170cf9d8c451b3772d4afec34 data/createdieselgenerators/loot_table/blocks/andesite_girder.json
 7f1ef85d7dbf267e35bb045fe6c0599f03d85e3d data/createdieselgenerators/loot_table/blocks/andesite_girder_encased_shaft.json

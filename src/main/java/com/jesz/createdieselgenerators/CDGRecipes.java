@@ -3,8 +3,6 @@ package com.jesz.createdieselgenerators;
 import com.jesz.createdieselgenerators.content.basin_lid.BasinFermentingRecipe;
 import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermentingRecipe;
 import com.jesz.createdieselgenerators.content.distillation.DistillationRecipe;
-import com.jesz.createdieselgenerators.content.tools.hammer.HammerRecipe;
-import com.jesz.createdieselgenerators.content.tools.wire_cutters.WireCuttingRecipe;
 import com.simibubi.create.content.kinetics.deployer.ItemApplicationRecipe;
 import com.simibubi.create.content.kinetics.deployer.ItemApplicationRecipeParams;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
@@ -28,9 +26,7 @@ public enum CDGRecipes implements IRecipeTypeInfo {
 
     BASIN_FERMENTING(BasinFermentingRecipe::new),
     BULK_FERMENTING(BulkFermentingRecipe::new),
-    DISTILLATION(DistillationRecipe::new),
-    WIRE_CUTTING(WireCuttingRecipe::new),
-    HAMMERING(HammerRecipe::new);
+    DISTILLATION(DistillationRecipe::new);
 
     private final ResourceLocation id;
     private final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<?>> serializerObject;

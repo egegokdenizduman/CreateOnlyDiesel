@@ -3,8 +3,6 @@ package com.jesz.createdieselgenerators.compat.jei;
 import com.jesz.createdieselgenerators.*;
 import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermentingRecipe;
 import com.jesz.createdieselgenerators.content.distillation.DistillationRecipe;
-import com.jesz.createdieselgenerators.content.tools.hammer.HammerRecipe;
-import com.jesz.createdieselgenerators.content.tools.wire_cutters.WireCuttingRecipe;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.compat.jei.*;
@@ -75,19 +73,7 @@ public class CDGJEI implements IModPlugin {
                 .catalyst(CDGItems.DISTILLATION_CONTROLLER::get)
                 .doubleItemIcon(AllBlocks.FLUID_TANK.get(), CDGItems.DISTILLATION_CONTROLLER.get())
                 .emptyBackground(177, 200)
-                .build("distillation", DistillationCategory::new),
-        hammering = builder(HammerRecipe.class)
-                .addTypedRecipes(CDGRecipes.HAMMERING)
-                .catalyst(CDGItems.HAMMER::get)
-                .doubleItemIcon(CDGItems.HAMMER.get(), AllItems.IRON_SHEET.get())
-                .emptyBackground(177, 55)
-                .build("hammering", HammeringCategory::new),
-        wire_cutting = builder(WireCuttingRecipe.class)
-                .addTypedRecipes(CDGRecipes.WIRE_CUTTING)
-                .catalyst(CDGItems.WIRE_CUTTERS::get)
-                .itemIcon(CDGItems.WIRE_CUTTERS.get())
-                .emptyBackground(177, 55)
-                .build("wire_cutting", WireCuttingCategory::new);
+                .build("distillation", DistillationCategory::new);
     }
 
     private <T extends Recipe<?>> CategoryBuilder<T> builder(Class<? extends T> recipeClass) {
