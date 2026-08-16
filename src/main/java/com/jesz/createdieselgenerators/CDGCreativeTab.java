@@ -36,7 +36,6 @@ public class CDGCreativeTab {
                         output.accept(CDGBlocks.PUMPJACK_CRANK.get());
                         output.accept(CDGBlocks.PUMPJACK_HEAD.get());
                         output.accept(CDGBlocks.CANISTER.get());
-                        output.accept(CDGBlocks.OIL_BARREL.get());
                         output.accept(CDGBlocks.BASIN_LID.get());
                         output.accept(CDGBlocks.BULK_FERMENTER.get());
                         output.accept(CDGBlocks.ANDESITE_GIRDER.get());

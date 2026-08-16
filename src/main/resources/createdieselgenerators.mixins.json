@@ -7,8 +7,6 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BasinRecipeMixin",
-    "ContraptionMixin",
-    "CopycatBlockMixin",
     "CreeperMixin",
     "EntityMixin",
     "LootItemAccessor",

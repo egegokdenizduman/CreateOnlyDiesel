@@ -19,8 +19,6 @@ import com.jesz.createdieselgenerators.content.distillation.DistillationTankBloc
 import com.jesz.createdieselgenerators.content.distillation.DistillationTankGenerator;
 import com.jesz.createdieselgenerators.content.distillation.DistillationTankModel;
 import com.jesz.createdieselgenerators.content.items.MultiBlockContainerBlockItem;
-import com.jesz.createdieselgenerators.content.oil_barrel.OilBarrelBlock;
-import com.jesz.createdieselgenerators.content.oil_barrel.OilBarrelCTBehavior;
 import com.jesz.createdieselgenerators.content.pumpjack.*;
 import com.jesz.createdieselgenerators.content.turret.ChemicalTurretBlock;
 import com.jesz.createdieselgenerators.contraption.DieselEngineMovementBehaviour;
@@ -228,19 +226,6 @@ public class CDGBlocks {
             .transform(pickaxeOnly())
             .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.standardModel(c, p)))
             .onRegister(CreateRegistrate.connectedTextures(BulkFermenterCTBehavior::new))
-            .item(MultiBlockContainerBlockItem::new)
-            .build()
-            .register();
-
-    public static final BlockEntry<OilBarrelBlock> OIL_BARREL = REGISTRATE.block("oil_barrel", OilBarrelBlock::new)
-            .initialProperties(SharedProperties::softMetal)
-            .properties(p -> p.mapColor(MapColor.METAL))
-            .properties(p -> p.isRedstoneConductor((p1, p2, p3) -> true))
-            .transform(pickaxeOnly())
-            .tag(AllTags.AllBlockTags.COPYCAT_ALLOW.tag)
-            .blockstate((c, p) -> BlockStateGen.simpleBlock(c, p, bs -> p.models().getExistingFile(p.modLoc("block/oil_barrel" + (bs.getValue(OilBarrelBlock.AXIS).isVertical() ? "" : bs.getValue(OilBarrelBlock.AXIS) == Direction.Axis.Z ? "_sideways_clockwise" : "_sideways")))))
-            .transform(mountedFluidStorage(CDGMountedStorageTypes.OIL_BARREL))
-            .onRegister(CreateRegistrate.connectedTextures(OilBarrelCTBehavior::new))
             .item(MultiBlockContainerBlockItem::new)
             .build()
             .register();

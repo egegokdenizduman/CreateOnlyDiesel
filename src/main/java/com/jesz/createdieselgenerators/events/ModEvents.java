@@ -15,7 +15,6 @@ import com.jesz.createdieselgenerators.content.diesel_engine.normal.DieselEngine
 import com.jesz.createdieselgenerators.content.distillation.DistillationTankBlockEntity;
 import com.jesz.createdieselgenerators.content.molds.BasinSpoutCasting;
 import com.jesz.createdieselgenerators.content.molds.MoldType;
-import com.jesz.createdieselgenerators.content.oil_barrel.OilBarrelBlockEntity;
 import com.jesz.createdieselgenerators.content.pumpjack.PumpjackHoleBlockEntity;
 import com.jesz.createdieselgenerators.content.tools.FueledToolItem;
 import com.jesz.createdieselgenerators.content.tools.lighter.LighterModel;
@@ -168,7 +167,6 @@ public class ModEvents {
         ModularDieselEngineBlockEntity.registerCapabilities(event);
         HugeDieselEngineBlockEntity.registerCapabilities(event);
         DistillationTankBlockEntity.registerCapabilities(event);
-        OilBarrelBlockEntity.registerCapabilities(event);
         PumpjackHoleBlockEntity.registerCapabilities(event);
         ChemicalTurretBlockEntity.registerCapabilities(event);
     }

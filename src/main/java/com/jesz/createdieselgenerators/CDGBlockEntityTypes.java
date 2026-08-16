@@ -16,7 +16,6 @@ import com.jesz.createdieselgenerators.content.diesel_engine.normal.DieselEngine
 import com.jesz.createdieselgenerators.content.diesel_engine.normal.DieselEngineRenderer;
 import com.jesz.createdieselgenerators.content.distillation.DistillationTankBlockEntity;
 import com.jesz.createdieselgenerators.content.distillation.DistillationTankRenderer;
-import com.jesz.createdieselgenerators.content.oil_barrel.OilBarrelBlockEntity;
 import com.jesz.createdieselgenerators.content.pumpjack.*;
 import com.jesz.createdieselgenerators.content.turret.ChemicalTurretBlockEntity;
 import com.jesz.createdieselgenerators.content.turret.ChemicalTurretRenderer;
@@ -89,10 +88,6 @@ public class CDGBlockEntityTypes {
     public static final BlockEntityEntry<BulkFermenterBlockEntity> BULK_FERMENTER = REGISTRATE.blockEntity("bulk_fermenter", BulkFermenterBlockEntity::new)
             .validBlocks(CDGBlocks.BULK_FERMENTER)
             .renderer(() -> BulkFermenterRenderer::new)
-            .register();
-
-    public static final BlockEntityEntry<OilBarrelBlockEntity> OIL_BARREL = REGISTRATE.blockEntity("oil_barrel_block_entity", OilBarrelBlockEntity::new)
-            .validBlocks(CDGBlocks.OIL_BARREL)
             .register();
 
     public static final BlockEntityEntry<PumpjackHoleBlockEntity> PUMPJACK_HOLE = REGISTRATE.blockEntity("pumpjack_hole_block_entity", PumpjackHoleBlockEntity::new)
