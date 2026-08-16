@@ -1,6 +1,5 @@
 {
   "values": [
-    "createdieselgenerators:chemical_turret",
     "createdieselgenerators:diesel_engine",
     "createdieselgenerators:large_diesel_engine",
     "createdieselgenerators:huge_diesel_engine",
@@ -15,22 +14,6 @@
     "createdieselgenerators:distillation_tank",
     "createdieselgenerators:bulk_fermenter",
     "createdieselgenerators:andesite_girder",
-    "createdieselgenerators:andesite_girder_encased_shaft",
-    "createdieselgenerators:white_concrete_encased_fluid_pipe",
-    "createdieselgenerators:orange_concrete_encased_fluid_pipe",
-    "createdieselgenerators:magenta_concrete_encased_fluid_pipe",
-    "createdieselgenerators:light_blue_concrete_encased_fluid_pipe",
-    "createdieselgenerators:yellow_concrete_encased_fluid_pipe",
-    "createdieselgenerators:lime_concrete_encased_fluid_pipe",
-    "createdieselgenerators:pink_concrete_encased_fluid_pipe",
-    "createdieselgenerators:gray_concrete_encased_fluid_pipe",
-    "createdieselgenerators:light_gray_concrete_encased_fluid_pipe",
-    "createdieselgenerators:cyan_concrete_encased_fluid_pipe",
-    "createdieselgenerators:purple_concrete_encased_fluid_pipe",
-    "createdieselgenerators:blue_concrete_encased_fluid_pipe",
-    "createdieselgenerators:brown_concrete_encased_fluid_pipe",
-    "createdieselgenerators:green_concrete_encased_fluid_pipe",
-    "createdieselgenerators:red_concrete_encased_fluid_pipe",
-    "createdieselgenerators:black_concrete_encased_fluid_pipe"
+    "createdieselgenerators:andesite_girder_encased_shaft"
   ]
 }

@@ -17,8 +17,6 @@ import com.jesz.createdieselgenerators.content.diesel_engine.normal.DieselEngine
 import com.jesz.createdieselgenerators.content.distillation.DistillationTankBlockEntity;
 import com.jesz.createdieselgenerators.content.distillation.DistillationTankRenderer;
 import com.jesz.createdieselgenerators.content.pumpjack.*;
-import com.jesz.createdieselgenerators.content.turret.ChemicalTurretBlockEntity;
-import com.jesz.createdieselgenerators.content.turret.ChemicalTurretRenderer;
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.content.fluids.pipes.FluidPipeBlockEntity;
 import com.simibubi.create.content.kinetics.base.*;
@@ -30,15 +28,6 @@ import static com.jesz.createdieselgenerators.CreateDieselGenerators.REGISTRATE;
 
 public class CDGBlockEntityTypes {
 
-
-    public static final BlockEntityEntry<FluidPipeBlockEntity> CONCRETE_ENCASED_FLUID_PIPE = REGISTRATE.blockEntity("concrete_encased_fluid_pipe", FluidPipeBlockEntity::new)
-            .validBlocksDeferred(() -> new ArrayList<>(CDGBlocks.CONCRETE_ENCASED_FLUID_PIPES.values()))
-            .register();
-
-    public static final BlockEntityEntry<ChemicalTurretBlockEntity> CHEMICAL_TURRET = REGISTRATE.blockEntity("chemical_turret", ChemicalTurretBlockEntity::new)
-            .validBlocks(CDGBlocks.CHEMICAL_TURRET)
-            .renderer(() -> ChemicalTurretRenderer::new)
-            .register();
 
     public static final BlockEntityEntry<DieselEngineBlockEntity> DIESEL_ENGINE = REGISTRATE.blockEntity("diesel_engine_tile_entity", DieselEngineBlockEntity::new)
             .visual(() -> ShaftVisual::new)

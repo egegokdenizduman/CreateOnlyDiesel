@@ -99,8 +99,6 @@
   "createdieselgenerators.recipe.compression_molding": "Compression Molding",
   "createdieselgenerators.recipe.casting": "Casting",
   "createdieselgenerators.recipe.bulk_fermenting": "Bulk Fermenting",
-  "createdieselgenerators.recipe.wire_cutting": "Wire Cutting",
-  "createdieselgenerators.recipe.hammering": "Hammering",
 
   "createdieselgenerators.hint.pumpjack_hole_no_pipe.title": "Missing Pipe",
   "createdieselgenerators.hint.pumpjack_hole_no_pipe": "This _Pumpjack_ does not appear to be connected to _bedrock_ below. Ensure the _Pipe_ reaches all the way down to the void.",

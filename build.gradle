@@ -112,11 +112,7 @@ dependencies {
     implementation("curse.maven:architectury-api-419699:5786327")
 
     implementation("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
-    compileOnly("cc.tweaked:cc-tweaked-${minecraft_version}-core-api:${cc_tweaked_version}")
-    compileOnly("cc.tweaked:cc-tweaked-${minecraft_version}-forge-api:${cc_tweaked_version}")
-    implementation("cc.tweaked:cc-tweaked-${minecraft_version}-forge:${cc_tweaked_version}")
 
-    implementation "curse.maven:selene-499980:7522321"
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 
     // Strut your stuff

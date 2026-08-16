@@ -3,9 +3,6 @@ package com.jesz.createdieselgenerators.compat.jei;
 import com.jesz.createdieselgenerators.*;
 import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermentingRecipe;
 import com.jesz.createdieselgenerators.content.distillation.DistillationRecipe;
-import com.jesz.createdieselgenerators.content.molds.CastingRecipe;
-import com.jesz.createdieselgenerators.content.tools.hammer.HammerRecipe;
-import com.jesz.createdieselgenerators.content.tools.wire_cutters.WireCuttingRecipe;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.compat.jei.*;
@@ -70,41 +67,13 @@ public class CDGJEI implements IModPlugin {
                 .doubleItemIcon(CDGBlocks.BULK_FERMENTER.get(), Items.CLOCK)
                 .emptyBackground(177, 100)
                 .build("bulk_fermenting", BulkFermentingCategory::new),
-        compression_molding = builder(BasinRecipe.class)
-                .addTypedRecipes(CDGRecipes.COMPRESSION_MOLDING)
-                .catalyst(AllBlocks.MECHANICAL_PRESS::get)
-                .catalyst(CDGItems.MOLD::get)
-                .catalyst(AllBlocks.BASIN::get)
-                .doubleItemIcon(AllBlocks.MECHANICAL_PRESS.get(), CDGItems.MOLD.get())
-                .emptyBackground(177, 100)
-                .build("compression_molding", CompressionMoldingCategory::new),
-        casting = builder(CastingRecipe.class)
-                .addTypedRecipes(CDGRecipes.CASTING)
-                .catalyst(AllBlocks.SPOUT::get)
-                .catalyst(CDGItems.MOLD::get)
-                .catalyst(AllBlocks.BASIN::get)
-                .doubleItemIcon(AllBlocks.SPOUT.get(), CDGItems.MOLD.get())
-                .emptyBackground(177, 100)
-                .build("casting", CastingCategory::new),
         distillation = builder(DistillationRecipe.class)
                 .addTypedRecipes(CDGRecipes.DISTILLATION)
                 .catalyst(AllBlocks.FLUID_TANK::get)
                 .catalyst(CDGItems.DISTILLATION_CONTROLLER::get)
                 .doubleItemIcon(AllBlocks.FLUID_TANK.get(), CDGItems.DISTILLATION_CONTROLLER.get())
                 .emptyBackground(177, 200)
-                .build("distillation", DistillationCategory::new),
-        hammering = builder(HammerRecipe.class)
-                .addTypedRecipes(CDGRecipes.HAMMERING)
-                .catalyst(CDGItems.HAMMER::get)
-                .doubleItemIcon(CDGItems.HAMMER.get(), AllItems.IRON_SHEET.get())
-                .emptyBackground(177, 55)
-                .build("hammering", HammeringCategory::new),
-        wire_cutting = builder(WireCuttingRecipe.class)
-                .addTypedRecipes(CDGRecipes.WIRE_CUTTING)
-                .catalyst(CDGItems.WIRE_CUTTERS::get)
-                .itemIcon(CDGItems.WIRE_CUTTERS.get())
-                .emptyBackground(177, 55)
-                .build("wire_cutting", WireCuttingCategory::new);
+                .build("distillation", DistillationCategory::new);
     }
 
     private <T extends Recipe<?>> CategoryBuilder<T> builder(Class<? extends T> recipeClass) {
@@ -124,24 +93,6 @@ public class CDGJEI implements IModPlugin {
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         allCategories.forEach(c -> c.registerCatalysts(registration));
-    }
-
-    @Override
-    public void registerItemSubtypes(ISubtypeRegistration registration) {
-        registration.registerSubtypeInterpreter(CDGItems.MOLD.get(), new ISubtypeInterpreter<>() {
-            @Override
-            public Object getSubtypeData(ItemStack stack, UidContext context) {
-                return stack.get(CDGDataComponents.MOLD_TYPE);
-            }
-
-            @Override
-            public String getLegacyStringSubtypeInfo(ItemStack stack, UidContext context) {
-                ResourceLocation mold = stack.get(CDGDataComponents.MOLD_TYPE);
-                if (mold == null)
-                    return "";
-                return "createdieselgenerators:mold:" + mold.toString();
-            }
-        });
     }
 
     @Override

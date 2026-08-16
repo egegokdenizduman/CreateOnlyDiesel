@@ -44,14 +44,7 @@ public class CDGPartialModels {
     public static final PartialModel JEI_DISTILLER_BOTTOM = model("block/jei_distiller/bottom");
     public static final PartialModel JEI_ENGINE_PISTON = model("block/huge_diesel_engine/jei_piston");
     public static final PartialModel JEI_BULK_FERMENTER = model("block/bulk_fermenter_jei");
-
-    public static final PartialModel CHEMICAL_TURRET_CONNECTOR = model("block/chemical_turret/connector");
-    public static final PartialModel CHEMICAL_TURRET_LIGHTER = model("block/chemical_turret/lighter");
-    public static final PartialModel CHEMICAL_TURRET_BODY = model("block/chemical_turret/body");
-    public static final PartialModel CHEMICAL_TURRET_SMALL_COG = model("block/chemical_turret/small_cog");
-    public static final PartialModel CHEMICAL_TURRET_COG = model("block/chemical_turret/cog");
-    public static final PartialModel TURRET_OPERATOR_HAT = model("entity/turret_operator_hat");
-
+;
     public static PartialModel model(String id){
         return PartialModel.of(CreateDieselGenerators.rl(id));
     }

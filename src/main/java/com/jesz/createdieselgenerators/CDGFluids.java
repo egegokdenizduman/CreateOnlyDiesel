@@ -1,7 +1,5 @@
 package com.jesz.createdieselgenerators;
 
-import com.jesz.createdieselgenerators.content.concrete.ConcreteBucketItem;
-import com.jesz.createdieselgenerators.content.concrete.ConcreteFluid;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.dispenser.BlockSource;
@@ -10,13 +8,7 @@ import net.minecraft.core.dispenser.DispenseItemBehavior;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraft.world.level.material.FlowingFluid;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
-import org.apache.commons.lang3.StringUtils;
-import org.jspecify.annotations.NonNull;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.jesz.createdieselgenerators.CreateDieselGenerators.REGISTRATE;
 
@@ -124,30 +116,6 @@ public class CDGFluids {
             .build()
             .register();
 
-    @SuppressWarnings("unchecked")
-    public static final FluidEntry<BaseFlowingFluid.Flowing>[] CONCRETE = new FluidEntry[DyeColor.values().length];
-
-    static {
-        for (DyeColor color : DyeColor.values()) {
-            CONCRETE[color.ordinal()] =
-                    REGISTRATE.fluid(color.getName() + "_cement",
-                                    CreateDieselGenerators.rl("block/cement/" + color.getName() + "_still"),
-                                    CreateDieselGenerators.rl("block/cement/" + color.getName() + "_flow"))
-                            .lang(StringUtils.capitalize(color.getName()) + " Concrete")
-                    .properties(b -> b.viscosity(1500)
-                            .density(500))
-                    .fluidProperties(p -> p.levelDecreasePerBlock(8)
-                            .tickRate(12)
-                            .slopeFindDistance(1)
-                            .explosionResistance(100f)).source(p -> new ConcreteFluid(p, color))
-                    .block()
-                            .build()
-                    .bucket((f, p) -> new ConcreteBucketItem(color, f, p))
-                            .onRegister(CDGFluids::registerFluidDispenseBehavior)
-                            .build()
-                    .register();
-        }
-    }
 
     public static void register() {}
 
@@ -156,7 +124,7 @@ public class CDGFluids {
     private static final DispenseItemBehavior DEFAULT = new DefaultDispenseItemBehavior();
     private static final DispenseItemBehavior DISPENSE_FLUID = new DefaultDispenseItemBehavior(){
         @Override
-        protected @NonNull ItemStack execute(BlockSource pSource, ItemStack pStack) {
+        protected ItemStack execute(BlockSource pSource, ItemStack pStack) {
             DispensibleContainerItem dispensibleContainerItem = (DispensibleContainerItem) pStack.getItem();
             BlockPos pos = pSource.pos().relative(pSource.state().getValue(DispenserBlock.FACING));
             Level level = pSource.level();

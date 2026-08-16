@@ -1,12 +1,10 @@
 package com.jesz.createdieselgenerators;
 
 import com.jesz.createdieselgenerators.compat.strut_your_stuff.StrutYourStuffRegistryEntries;
-import com.jesz.createdieselgenerators.content.molds.MoldType;
 import com.jesz.createdieselgenerators.content.track_layers_bag.TrackLayersBagItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -22,8 +20,6 @@ public class CDGCreativeTab {
                     .icon(CDGBlocks.DIESEL_ENGINE::asStack)
                     .displayItems((pParameters, output) -> {
                         output.accept(CDGItems.ENGINE_PISTON.get());
-                        output.accept(CDGItems.WIRE_CUTTERS.get());
-                        output.accept(CDGItems.HAMMER.get());
                         output.accept(CDGItems.ENGINE_SILENCER.get());
                         output.accept(CDGItems.ENGINE_TURBO.get());
                         output.accept(CDGBlocks.DIESEL_ENGINE.get());
@@ -41,26 +37,14 @@ public class CDGCreativeTab {
                         output.accept(CDGBlocks.ANDESITE_GIRDER.get());
                         if (ModList.get().isLoaded("struts"))
                             StrutYourStuffRegistryEntries.fillCreativeTab(output);
-                        output.accept(CDGBlocks.CHEMICAL_TURRET.get());
                         output.accept(CDGFluids.CRUDE_OIL.getBucket().get());
                         output.accept(CDGFluids.BIODIESEL.getBucket().get());
                         output.accept(CDGFluids.DIESEL.getBucket().get());
                         output.accept(CDGFluids.GASOLINE.getBucket().get());
                         output.accept(CDGFluids.PLANT_OIL.getBucket().get());
                         output.accept(CDGFluids.ETHANOL.getBucket().get());
-                        output.accept(CDGItems.LIGHTER.get());
-                        output.accept(CDGItems.CHEMICAL_SPRAYER.get());
-                        output.accept(CDGItems.CHEMICAL_SPRAYER_LIGHTER.get());
                         output.accept(CDGItems.TRACK_LAYERS_BAG.get());
                         output.accept(TrackLayersBagItem.full());
-                        output.accept(CDGItems.ENTITY_FILTER.get());
-                        MoldType.types.forEach(mt -> {
-                            ItemStack moldStack = CDGItems.MOLD.asStack();
-                            moldStack.set(CDGDataComponents.MOLD_TYPE, mt.getId());
-                            output.accept(moldStack);
-                        });
-                        for (var fluid : CDGFluids.CONCRETE)
-                            output.accept(fluid.getBucket().orElseThrow());
                     })
                     .build());
 

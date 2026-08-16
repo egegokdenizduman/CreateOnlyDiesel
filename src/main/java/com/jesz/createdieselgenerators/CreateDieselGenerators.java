@@ -1,11 +1,6 @@
 package com.jesz.createdieselgenerators;
 
-import com.jesz.createdieselgenerators.compat.computercraft.CCProxy;
 import com.jesz.createdieselgenerators.compat.strut_your_stuff.StrutYourStuffRegistryEntries;
-import com.jesz.createdieselgenerators.content.molds.MoldType;
-import com.jesz.createdieselgenerators.content.tools.lighter.LighterModel;
-import com.jesz.createdieselgenerators.packets.CDGPackets;
-import com.simibubi.create.compat.Mods;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
@@ -41,20 +36,15 @@ public class CreateDieselGenerators
         CDGBlocks.register();
         CDGFluids.register();
         CDGBlockEntityTypes.register();
-        CDGEntityTypes.register();
         CDGSoundEvents.register(modEventBus);
         CDGRecipes.register(modEventBus);
-        CDGMenuTypes.register();
-        MoldType.register();
         CDGMountedStorageTypes.register();
         CDGCreativeTab.register(modEventBus);
-        CDGPackets.register();
         CDGDataComponents.register(modEventBus);
         CDGDisplaySources.register();
         if (ModList.get().isLoaded("struts"))
             StrutYourStuffRegistryEntries.register();
 
-        Mods.COMPUTERCRAFT.executeIfInstalled(() -> CCProxy::register);
 
         CatnipServices.PLATFORM.executeOnClientOnly(() -> () -> onClient(modEventBus, container));
         container.registerConfig(ModConfig.Type.SERVER, CDGConfig.SERVER_SPEC, ID + "-server.toml");
@@ -64,7 +54,6 @@ public class CreateDieselGenerators
     public static void onClient(IEventBus modEventBus, ModContainer container) {
         CDGPartialModels.init();
         container.registerConfig(ModConfig.Type.CLIENT, CDGConfig.CLIENT_SPEC, ID + "-client.toml");
-        modEventBus.addListener(LighterModel::onModelBake);
     }
 
     public static ResourceLocation rl(String path){
