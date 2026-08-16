@@ -35,9 +35,6 @@ public class CDGPonderPlugin implements PonderPlugin {
                 .addStoryBoard("pumpjack", PumpjackScene::scene);
         helper.forComponents(CDGBlocks.PUMPJACK_BEARING.getId(), CDGBlocks.PUMPJACK_CRANK.getId(), CDGBlocks.PUMPJACK_HEAD.getId(), CDGItems.OIL_SCANNER.getId())
                 .addStoryBoard("pumpjack", OilChunkScene::scene);
-        helper.forComponents(CDGBlocks.CHEMICAL_TURRET.getId())
-                .addStoryBoard("chemical_turret", TurretScenes::chemical)
-                .addStoryBoard("automatic_turret", TurretScenes::automatic);
     }
 
     @Override
@@ -50,8 +47,7 @@ public class CDGPonderPlugin implements PonderPlugin {
                 .add(CDGBlocks.HUGE_DIESEL_ENGINE.getId());
         helper.addToTag(AllCreatePonderTags.KINETIC_APPLIANCES)
                 .add(CDGBlocks.BASIN_LID.getId())
-                .add(CDGBlocks.PUMPJACK_BEARING.getId())
-                .add(CDGBlocks.CHEMICAL_TURRET.getId());
+                .add(CDGBlocks.PUMPJACK_BEARING.getId());
         helper.addToTag(AllCreatePonderTags.DISPLAY_SOURCES)
                 .add(CDGBlocks.PUMPJACK_HOLE.getId());
         helper.addToTag(AllCreatePonderTags.DECORATION)

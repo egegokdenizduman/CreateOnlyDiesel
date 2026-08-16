@@ -20,7 +20,6 @@ import com.jesz.createdieselgenerators.content.distillation.DistillationTankGene
 import com.jesz.createdieselgenerators.content.distillation.DistillationTankModel;
 import com.jesz.createdieselgenerators.content.items.MultiBlockContainerBlockItem;
 import com.jesz.createdieselgenerators.content.pumpjack.*;
-import com.jesz.createdieselgenerators.content.turret.ChemicalTurretBlock;
 import com.jesz.createdieselgenerators.contraption.DieselEngineMovementBehaviour;
 import com.jesz.createdieselgenerators.contraption.PumpjackBearingBMovementBehaviour;
 import com.jesz.createdieselgenerators.contraption.PumpjackHeadMovementBehaviour;
@@ -64,14 +63,6 @@ import static com.simibubi.create.foundation.data.TagGen.axeOnly;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 
 public class CDGBlocks {
-
-    public static final BlockEntry<ChemicalTurretBlock> CHEMICAL_TURRET = REGISTRATE.block("chemical_turret", ChemicalTurretBlock::new)
-            .initialProperties(SharedProperties::copperMetal)
-            .transform(pickaxeOnly())
-            .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
-            .onRegister(b -> BlockStressValues.IMPACTS.register(b, () -> 4))
-            .item().model((c, p) -> p.blockItem(c, "/item")).build()
-            .register();
 
     public static final BlockEntry<DieselEngineBlock> DIESEL_ENGINE = REGISTRATE.block("diesel_engine", DieselEngineBlock::new)
             .initialProperties(SharedProperties::softMetal)

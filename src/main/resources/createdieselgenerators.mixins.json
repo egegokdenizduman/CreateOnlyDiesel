@@ -8,7 +8,6 @@
   "mixins": [
     "BasinRecipeMixin",
     "CreeperMixin",
-    "EntityMixin",
     "LootItemAccessor",
     "LootPoolAccessor",
     "LootTableAccessor",
@@ -18,9 +17,7 @@
     "SableAssemblyMixin"
   ],
   "client": [
-    "AgeableListModelAccessor",
-    "BasinRendererMixin",
-    "ModelPartAccessor"
+    "BasinRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

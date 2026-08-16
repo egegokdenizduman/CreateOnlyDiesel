@@ -19,8 +19,6 @@ import com.jesz.createdieselgenerators.content.pumpjack.PumpjackHoleBlockEntity;
 import com.jesz.createdieselgenerators.content.tools.FueledToolItem;
 import com.jesz.createdieselgenerators.content.tools.lighter.LighterModel;
 import com.jesz.createdieselgenerators.content.track_layers_bag.TrackLayersBagComponent;
-import com.jesz.createdieselgenerators.content.turret.ChemicalTurretBlockEntity;
-import com.jesz.createdieselgenerators.content.turret.TurretOperatorHatLayer;
 import com.jesz.createdieselgenerators.events.datagen.CDGRecipeProvider;
 import com.jesz.createdieselgenerators.fuel_type.FuelType;
 import com.jesz.createdieselgenerators.ponder.CDGPonderPlugin;
@@ -136,15 +134,6 @@ public class ModEvents {
     }
 
     @SubscribeEvent
-    @OnlyIn(Dist.CLIENT)
-    public static void addEntityRendererLayers(EntityRenderersEvent.AddLayers event) {
-        EntityRenderDispatcher dispatcher = Minecraft.getInstance()
-                .getEntityRenderDispatcher();
-
-        TurretOperatorHatLayer.registerOnAll(dispatcher);
-    }
-
-    @SubscribeEvent
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
         event.registerItem(
                 Capabilities.FluidHandler.ITEM,
@@ -168,7 +157,6 @@ public class ModEvents {
         HugeDieselEngineBlockEntity.registerCapabilities(event);
         DistillationTankBlockEntity.registerCapabilities(event);
         PumpjackHoleBlockEntity.registerCapabilities(event);
-        ChemicalTurretBlockEntity.registerCapabilities(event);
     }
 
     @SubscribeEvent

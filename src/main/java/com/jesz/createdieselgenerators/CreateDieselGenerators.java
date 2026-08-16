@@ -1,11 +1,9 @@
 package com.jesz.createdieselgenerators;
 
-import com.jesz.createdieselgenerators.compat.computercraft.CCProxy;
 import com.jesz.createdieselgenerators.compat.strut_your_stuff.StrutYourStuffRegistryEntries;
 import com.jesz.createdieselgenerators.content.molds.MoldType;
 import com.jesz.createdieselgenerators.content.tools.lighter.LighterModel;
 import com.jesz.createdieselgenerators.packets.CDGPackets;
-import com.simibubi.create.compat.Mods;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
@@ -54,7 +52,6 @@ public class CreateDieselGenerators
         if (ModList.get().isLoaded("struts"))
             StrutYourStuffRegistryEntries.register();
 
-        Mods.COMPUTERCRAFT.executeIfInstalled(() -> CCProxy::register);
 
         CatnipServices.PLATFORM.executeOnClientOnly(() -> () -> onClient(modEventBus, container));
         container.registerConfig(ModConfig.Type.SERVER, CDGConfig.SERVER_SPEC, ID + "-server.toml");
