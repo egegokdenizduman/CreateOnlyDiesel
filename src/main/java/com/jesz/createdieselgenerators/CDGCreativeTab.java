@@ -42,7 +42,6 @@ public class CDGCreativeTab {
                         output.accept(CDGBlocks.ANDESITE_GIRDER.get());
                         if (ModList.get().isLoaded("struts"))
                             StrutYourStuffRegistryEntries.fillCreativeTab(output);
-                        output.accept(CDGBlocks.BURNER.get());
                         output.accept(CDGBlocks.CHEMICAL_TURRET.get());
                         output.accept(CDGFluids.CRUDE_OIL.getBucket().get());
                         output.accept(CDGFluids.BIODIESEL.getBucket().get());

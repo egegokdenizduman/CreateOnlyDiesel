@@ -6,8 +6,6 @@ import com.jesz.createdieselgenerators.content.andesite_girder.AndesiteGirderGen
 import com.jesz.createdieselgenerators.content.basin_lid.BasinLidBlock;
 import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermenterBlock;
 import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermenterCTBehavior;
-import com.jesz.createdieselgenerators.content.burner.BurnerBlock;
-import com.jesz.createdieselgenerators.content.burner.BurnerBlockEntity;
 import com.jesz.createdieselgenerators.content.canister.CanisterBlock;
 import com.jesz.createdieselgenerators.content.canister.CanisterBlockItem;
 import com.jesz.createdieselgenerators.content.concrete.ConcreteEncasedFluidPipeBlock;
@@ -68,19 +66,6 @@ import static com.simibubi.create.foundation.data.TagGen.axeOnly;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 
 public class CDGBlocks {
-    
-    public static final BlockEntry<BurnerBlock> BURNER = REGISTRATE.block("burner", BurnerBlock::new)
-            .initialProperties(SharedProperties::copperMetal)
-            .transform(pickaxeOnly())
-            .tag(CDGTags.HEAT_SOURCES)
-            .blockstate((c, p) -> BlockStateGen.horizontalAxisBlock(c, p, bs -> AssetLookup.partialBaseModel(c, p)))
-            .onRegister((b) -> BoilerHeater.REGISTRY.register(b, ((level, pos, state) -> {
-                if(level.getBlockEntity(pos) instanceof BurnerBlockEntity be)
-                    return state.getValue(BurnerBlock.LIT) ? be.heat : -1;
-                return -1;
-            })))
-            .item().model((c, p) -> p.blockItem(c, "/item")).build()
-            .register();
 
     public static final BlockEntry<ChemicalTurretBlock> CHEMICAL_TURRET = REGISTRATE.block("chemical_turret", ChemicalTurretBlock::new)
             .initialProperties(SharedProperties::copperMetal)

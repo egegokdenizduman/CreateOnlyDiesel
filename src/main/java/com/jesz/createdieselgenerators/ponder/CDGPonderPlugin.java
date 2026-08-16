@@ -35,8 +35,6 @@ public class CDGPonderPlugin implements PonderPlugin {
                 .addStoryBoard("pumpjack", PumpjackScene::scene);
         helper.forComponents(CDGBlocks.PUMPJACK_BEARING.getId(), CDGBlocks.PUMPJACK_CRANK.getId(), CDGBlocks.PUMPJACK_HEAD.getId(), CDGItems.OIL_SCANNER.getId())
                 .addStoryBoard("pumpjack", OilChunkScene::scene);
-        helper.forComponents(CDGBlocks.BURNER.getId())
-                .addStoryBoard("burner", BurnerScenes::scene);
         helper.forComponents(CDGBlocks.CHEMICAL_TURRET.getId())
                 .addStoryBoard("chemical_turret", TurretScenes::chemical)
                 .addStoryBoard("automatic_turret", TurretScenes::automatic);

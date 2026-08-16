@@ -7,7 +7,6 @@ import com.jesz.createdieselgenerators.*;
 import com.jesz.createdieselgenerators.compat.kubejs.LighterSkinsEventJS;
 import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermenterBlockEntity;
 import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermenterUnpackingHandler;
-import com.jesz.createdieselgenerators.content.burner.BurnerBlockEntity;
 import com.jesz.createdieselgenerators.content.canister.CanisterBlockEntity;
 import com.jesz.createdieselgenerators.content.canister.SpoutCanisterFilling;
 import com.jesz.createdieselgenerators.content.diesel_engine.huge.HugeDieselEngineBlockEntity;
@@ -164,7 +163,6 @@ public class ModEvents {
             );
         }
         BulkFermenterBlockEntity.registerCapabilities(event);
-        BurnerBlockEntity.registerCapabilities(event);
         CanisterBlockEntity.registerCapabilities(event);
         DieselEngineBlockEntity.registerCapabilities(event);
         ModularDieselEngineBlockEntity.registerCapabilities(event);

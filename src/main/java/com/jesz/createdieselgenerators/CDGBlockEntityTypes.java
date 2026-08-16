@@ -4,8 +4,6 @@ import com.jesz.createdieselgenerators.content.basin_lid.BasinLidBlockEntity;
 import com.jesz.createdieselgenerators.content.basin_lid.BasinLidRenderer;
 import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermenterBlockEntity;
 import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermenterRenderer;
-import com.jesz.createdieselgenerators.content.burner.BurnerBlockEntity;
-import com.jesz.createdieselgenerators.content.burner.BurnerRenderer;
 import com.jesz.createdieselgenerators.content.canister.CanisterBlockEntity;
 import com.jesz.createdieselgenerators.content.canister.CanisterRenderer;
 import com.jesz.createdieselgenerators.content.diesel_engine.huge.HugeDieselEngineBlockEntity;
@@ -33,12 +31,6 @@ import static com.jesz.createdieselgenerators.CreateDieselGenerators.REGISTRATE;
 
 public class CDGBlockEntityTypes {
 
-
-    public static final BlockEntityEntry<BurnerBlockEntity> BURNER = REGISTRATE.blockEntity("burner", BurnerBlockEntity::new)
-            .visual(() -> ShaftVisual::new )
-            .validBlocks(CDGBlocks.BURNER)
-            .renderer(() -> BurnerRenderer::new)
-            .register();
 
     public static final BlockEntityEntry<FluidPipeBlockEntity> CONCRETE_ENCASED_FLUID_PIPE = REGISTRATE.blockEntity("concrete_encased_fluid_pipe", FluidPipeBlockEntity::new)
             .validBlocksDeferred(() -> new ArrayList<>(CDGBlocks.CONCRETE_ENCASED_FLUID_PIPES.values()))
