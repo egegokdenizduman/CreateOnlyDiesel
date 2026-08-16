@@ -3,7 +3,6 @@ package com.jesz.createdieselgenerators;
 import com.jesz.createdieselgenerators.compat.strut_your_stuff.StrutYourStuffRegistryEntries;
 import com.jesz.createdieselgenerators.content.molds.MoldType;
 import com.jesz.createdieselgenerators.content.tools.lighter.LighterModel;
-import com.jesz.createdieselgenerators.packets.CDGPackets;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
@@ -42,11 +41,9 @@ public class CreateDieselGenerators
         CDGEntityTypes.register();
         CDGSoundEvents.register(modEventBus);
         CDGRecipes.register(modEventBus);
-        CDGMenuTypes.register();
         MoldType.register();
         CDGMountedStorageTypes.register();
         CDGCreativeTab.register(modEventBus);
-        CDGPackets.register();
         CDGDataComponents.register(modEventBus);
         CDGDisplaySources.register();
         if (ModList.get().isLoaded("struts"))

@@ -8,9 +8,6 @@
   "mixins": [
     "BasinRecipeMixin",
     "CreeperMixin",
-    "LootItemAccessor",
-    "LootPoolAccessor",
-    "LootTableAccessor",
     "MechanicalPressBlockEntityMixin",
     "ShaftBlockMixin",
     "UseOnContextInvoker",

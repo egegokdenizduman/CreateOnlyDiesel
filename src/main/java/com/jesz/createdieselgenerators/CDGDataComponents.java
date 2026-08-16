@@ -1,6 +1,5 @@
 package com.jesz.createdieselgenerators;
 
-import com.jesz.createdieselgenerators.content.entity_filter.EntityAttribute;
 import com.jesz.createdieselgenerators.content.tools.lighter.LighterState;
 import com.jesz.createdieselgenerators.content.track_layers_bag.TrackLayersBagItemDataComponent;
 import com.simibubi.create.content.equipment.sandPaper.SandPaperItemComponent;
@@ -36,10 +35,6 @@ public class CDGDataComponents {
 
     public static final DataComponentType<SandPaperItemComponent> PROCESSING_ITEM = register("processing_item",
             builder -> builder.persistent(SandPaperItemComponent.CODEC).networkSynchronized(SandPaperItemComponent.STREAM_CODEC));
-
-    public static final DataComponentType<List<EntityAttribute.EntityAttributeEntry>> ENTITY_FILTER_MATCHED_ATTRIBUTES = register(
-            "entity_filter_matched_attributes",
-            builder -> builder.persistent(EntityAttribute.EntityAttributeEntry.CODEC.listOf()).networkSynchronized(CatnipStreamCodecBuilders.list(EntityAttribute.EntityAttributeEntry.STREAM_CODEC)));
 
     public static final DataComponentType<Integer> OIL_SCANNER_PROGRESS = register("oil_scanner_progress",
             builder -> builder.persistent(ExtraCodecs.NON_NEGATIVE_INT).networkSynchronized(ByteBufCodecs.VAR_INT));

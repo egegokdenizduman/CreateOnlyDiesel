@@ -1,7 +1,6 @@
 package com.jesz.createdieselgenerators;
 
 import com.jesz.createdieselgenerators.content.distillation.DistillationControllerItem;
-import com.jesz.createdieselgenerators.content.entity_filter.EntityFilterItem;
 import com.jesz.createdieselgenerators.content.items.FurnaceBurnItem;
 import com.jesz.createdieselgenerators.content.molds.MoldItem;
 import com.jesz.createdieselgenerators.content.tools.ChemicalSprayerItem;
@@ -66,7 +65,6 @@ public class CDGItems {
             .properties(p -> p.durability(128))
             .register();
 
-    public static final ItemEntry<EntityFilterItem> ENTITY_FILTER = REGISTRATE.item("entity_filter", EntityFilterItem::new).register();
 
     public static void register() {}
 }

@@ -212,7 +212,6 @@
   "item.createdieselgenerators.engine_turbocharger.tooltip.behaviour1": "_Applies_ this _Upgrade_ on the _Engine_.",
   "item.createdieselgenerators.engine_turbocharger.tooltip.condition1": "When R-Clicked on an Engine.",
   "item.createdieselgenerators.engine_turbocharger.tooltip.summary": "Use on a _Diesel Engine_ make it _faster_.",
-  "item.createdieselgenerators.entity_filter": "Entity Filter",
   "item.createdieselgenerators.entity_filter.tooltip.behaviour1": "Opens the _configuration interface_",
   "item.createdieselgenerators.entity_filter.tooltip.condition1": "When R-Clicked",
   "item.createdieselgenerators.entity_filter.tooltip.summary": "_Matches entities_ against a set of _attributes_ or _categories_.",

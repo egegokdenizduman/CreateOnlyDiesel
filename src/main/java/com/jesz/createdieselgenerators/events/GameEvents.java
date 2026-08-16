@@ -4,13 +4,8 @@ import com.jesz.createdieselgenerators.*;
 import com.jesz.createdieselgenerators.commands.CDGCommands;
 import com.jesz.createdieselgenerators.content.andesite_girder.AndesiteGirderWrenchBehaviour;
 import com.jesz.createdieselgenerators.content.diesel_engine.EngineTypes;
-import com.jesz.createdieselgenerators.content.entity_filter.EntityFilteringRenderer;
-import com.jesz.createdieselgenerators.content.entity_filter.ReverseLootTable;
 import com.jesz.createdieselgenerators.content.track_layers_bag.TrackLayersBagPlacement;
 import com.jesz.createdieselgenerators.fuel_type.FuelType;
-import com.jesz.createdieselgenerators.mixins.LootItemAccessor;
-import com.jesz.createdieselgenerators.mixins.LootPoolAccessor;
-import com.jesz.createdieselgenerators.mixins.LootTableAccessor;
 import com.simibubi.create.content.equipment.goggles.GogglesItem;
 import com.simibubi.create.content.kinetics.base.IRotate;
 import com.simibubi.create.foundation.item.TooltipHelper;
@@ -70,28 +65,6 @@ public class GameEvents {
     }
 
     @SubscribeEvent
-    public static void loadLootTable(LootTableLoadEvent event){
-        LootTable table = event.getTable();
-        ResourceLocation tableId = table.getLootTableId();
-        if (tableId == null) return;
-        if (!tableId.getPath().startsWith("entities/"))
-                return;
-
-        ((LootTableAccessor)table).getPools().forEach(pool -> {
-            List.of(((LootPoolAccessor) pool).getEntries()).forEach(e -> {
-                for (LootPoolEntryContainer c : e)
-                    if (c instanceof LootItemAccessor lootItem) {
-                        String path = tableId.getPath();
-                        path = path.replaceAll("entities/", "");
-                        EntityType<?> type = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath(tableId.getNamespace(), path));
-                        ReverseLootTable.ALL.computeIfAbsent(lootItem.getItem().value(), s -> new ArrayList<>()).add(type);
-
-                    }
-            });
-        });
-    }
-
-    @SubscribeEvent
     public static void playerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
 
     }
@@ -99,7 +72,6 @@ public class GameEvents {
     @SubscribeEvent
     public static void onClientTick(ClientTickEvent.Post event) {
         AndesiteGirderWrenchBehaviour.tick();
-        EntityFilteringRenderer.tick();
         TrackLayersBagPlacement.clientTick();
     }
 
