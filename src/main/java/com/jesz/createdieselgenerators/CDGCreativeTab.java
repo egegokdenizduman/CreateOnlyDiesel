@@ -44,7 +44,6 @@ public class CDGCreativeTab {
                             StrutYourStuffRegistryEntries.fillCreativeTab(output);
                         output.accept(CDGBlocks.BURNER.get());
                         output.accept(CDGBlocks.CHEMICAL_TURRET.get());
-                        output.accept(CDGBlocks.SHEET_METAL_PANEL.get());
                         output.accept(CDGFluids.CRUDE_OIL.getBucket().get());
                         output.accept(CDGFluids.BIODIESEL.getBucket().get());
                         output.accept(CDGFluids.DIESEL.getBucket().get());

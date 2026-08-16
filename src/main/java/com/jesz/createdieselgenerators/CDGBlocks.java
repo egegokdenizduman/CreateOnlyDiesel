@@ -24,8 +24,6 @@ import com.jesz.createdieselgenerators.content.items.MultiBlockContainerBlockIte
 import com.jesz.createdieselgenerators.content.oil_barrel.OilBarrelBlock;
 import com.jesz.createdieselgenerators.content.oil_barrel.OilBarrelCTBehavior;
 import com.jesz.createdieselgenerators.content.pumpjack.*;
-import com.jesz.createdieselgenerators.content.sheetmetal.SheetMetalPanelBlock;
-import com.jesz.createdieselgenerators.content.sheetmetal.SheetMetalPanelModel;
 import com.jesz.createdieselgenerators.content.turret.ChemicalTurretBlock;
 import com.jesz.createdieselgenerators.contraption.DieselEngineMovementBehaviour;
 import com.jesz.createdieselgenerators.contraption.PumpjackBearingBMovementBehaviour;
@@ -281,27 +279,6 @@ public class CDGBlocks {
                             .withPool(p.applyExplosionCondition(AllBlocks.SHAFT.get(), LootPool.lootPool()
                                     .setRolls(ConstantValue.exactly(1.0F))
                                     .add(LootItem.lootTableItem(AllBlocks.SHAFT.get()))))))
-                    .register();
-
-    public static final BlockEntry<SheetMetalPanelBlock> SHEET_METAL_PANEL =
-            REGISTRATE.block("sheet_metal_panel", SheetMetalPanelBlock::new)
-                    .initialProperties(SharedProperties::softMetal)
-                    .properties(p -> p.mapColor(MapColor.COLOR_LIGHT_GRAY).sound(SoundType.NETHERITE_BLOCK))
-                    .onRegister(CreateRegistrate.blockModel(() -> SheetMetalPanelModel::new))
-                    .transform(pickaxeOnly())
-                    .blockstate((c, p) ->
-                            p.getVariantBuilder(c.getEntry())
-                                    .forAllStates(bs ->
-                                    ConfiguredModel.builder()
-                                            .modelFile(bs.getValue(SheetMetalPanelBlock.FACING).getAxis().isHorizontal() ? ((bs.getValue(SheetMetalPanelBlock.ROLL) ? p.models().getExistingFile(p.modLoc("block/sheet_metal_panel_horizontal")) : AssetLookup.standardModel(c, p))) : AssetLookup.standardModel(c, p))
-                                            .rotationX(bs.getValue(SheetMetalPanelBlock.FACING).getAxis().isVertical() ? (bs.getValue(SheetMetalPanelBlock.FACING) == Direction.UP ? 90 : 270) : 0)
-                                            .rotationY(bs.getValue(SheetMetalPanelBlock.FACING).getAxis().isVertical() ? (bs.getValue(SheetMetalPanelBlock.ROLL) ? 90 : 0) :
-                                                    (bs.getValue(SheetMetalPanelBlock.FACING) == Direction.SOUTH ? 0 :
-                                                            bs.getValue(SheetMetalPanelBlock.FACING) == Direction.NORTH ? 180 :
-                                                                    bs.getValue(SheetMetalPanelBlock.FACING) == Direction.WEST  ? 90  : 270))
-                                            .build()
-                            ))
-                    .simpleItem()
                     .register();
 
     public static final Map<DyeColor, BlockEntry<ConcreteEncasedFluidPipeBlock>> CONCRETE_ENCASED_FLUID_PIPES = new HashMap<>();

@@ -57,7 +57,6 @@ public class CDGPonderPlugin implements PonderPlugin {
         helper.addToTag(AllCreatePonderTags.DISPLAY_SOURCES)
                 .add(CDGBlocks.PUMPJACK_HOLE.getId());
         helper.addToTag(AllCreatePonderTags.DECORATION)
-                .add(CDGBlocks.ANDESITE_GIRDER.getId())
-                .add(CDGBlocks.SHEET_METAL_PANEL.getId());
+                .add(CDGBlocks.ANDESITE_GIRDER.getId());
     }
 }
