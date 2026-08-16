@@ -2,7 +2,6 @@ package com.jesz.createdieselgenerators;
 
 import com.jesz.createdieselgenerators.compat.strut_your_stuff.StrutYourStuffRegistryEntries;
 import com.jesz.createdieselgenerators.content.molds.MoldType;
-import com.jesz.createdieselgenerators.content.tools.lighter.LighterModel;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
@@ -38,7 +37,6 @@ public class CreateDieselGenerators
         CDGBlocks.register();
         CDGFluids.register();
         CDGBlockEntityTypes.register();
-        CDGEntityTypes.register();
         CDGSoundEvents.register(modEventBus);
         CDGRecipes.register(modEventBus);
         MoldType.register();
@@ -58,7 +56,6 @@ public class CreateDieselGenerators
     public static void onClient(IEventBus modEventBus, ModContainer container) {
         CDGPartialModels.init();
         container.registerConfig(ModConfig.Type.CLIENT, CDGConfig.CLIENT_SPEC, ID + "-client.toml");
-        modEventBus.addListener(LighterModel::onModelBake);
     }
 
     public static ResourceLocation rl(String path){

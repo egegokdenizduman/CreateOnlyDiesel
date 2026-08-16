@@ -120,17 +120,6 @@ public class GameEvents {
     }
 
     @SubscribeEvent
-    public static void addTrade(VillagerTradesEvent event) {
-        Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-        if(!(event.getType() == VillagerProfession.TOOLSMITH))
-            return;
-        trades.get(2).add((t, r) -> new MerchantOffer(
-                new ItemCost(Items.EMERALD, 5),
-                new ItemStack(CDGItems.LIGHTER.get()),
-                10,8,0.02f));
-    }
-
-    @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public static void addToItemTooltip(ItemTooltipEvent event) {
         if (!AllConfigs.client().tooltips.get())

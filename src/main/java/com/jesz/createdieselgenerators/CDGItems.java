@@ -1,16 +1,11 @@
 package com.jesz.createdieselgenerators;
 
 import com.jesz.createdieselgenerators.content.distillation.DistillationControllerItem;
-import com.jesz.createdieselgenerators.content.items.FurnaceBurnItem;
 import com.jesz.createdieselgenerators.content.molds.MoldItem;
-import com.jesz.createdieselgenerators.content.tools.ChemicalSprayerItem;
 import com.jesz.createdieselgenerators.content.tools.OilScannerItem;
 import com.jesz.createdieselgenerators.content.tools.hammer.HammerItem;
-import com.jesz.createdieselgenerators.content.tools.lighter.LighterItem;
 import com.jesz.createdieselgenerators.content.tools.wire_cutters.WireCuttersItem;
 import com.jesz.createdieselgenerators.content.track_layers_bag.TrackLayersBagItem;
-import com.simibubi.create.AllTags;
-import com.simibubi.create.foundation.data.AssetLookup;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
@@ -27,21 +22,6 @@ public class CDGItems {
     public static final ItemEntry<Item> ENGINE_TURBO = REGISTRATE.item("engine_turbocharger", Item::new).register();
 
     public static final ItemEntry<DistillationControllerItem> DISTILLATION_CONTROLLER = REGISTRATE.item("distillation_controller", DistillationControllerItem::new).register();
-
-    public static final ItemEntry<LighterItem> LIGHTER = REGISTRATE.item("lighter", LighterItem::new)
-            .properties(p -> p.stacksTo(1))
-            .register();
-
-    public static final ItemEntry<ChemicalSprayerItem> CHEMICAL_SPRAYER = REGISTRATE.item("chemical_sprayer", p -> new ChemicalSprayerItem(p, false))
-            .properties(p -> p.stacksTo(1))
-            .model(AssetLookup.itemModelWithPartials())
-            .register();
-
-    public static final ItemEntry<ChemicalSprayerItem> CHEMICAL_SPRAYER_LIGHTER = REGISTRATE.item("chemical_sprayer_lighter", p -> new ChemicalSprayerItem(p, true))
-            .properties(p -> p.stacksTo(1))
-            .lang("Chemical Sprayer With Lighter")
-            .model((c, p) -> p.withExistingParent("chemical_sprayer_lighter", p.modLoc("item/chemical_sprayer/lighter")))
-            .register();
 
     public static final ItemEntry<OilScannerItem> OIL_SCANNER = REGISTRATE.item("oil_scanner", OilScannerItem::new)
             .onRegister(OilScannerItem::registerModelOverrides).model(OilScannerItem::addOverrideModels)

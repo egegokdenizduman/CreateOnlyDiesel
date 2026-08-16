@@ -47,9 +47,6 @@ public class CDGCreativeTab {
                         output.accept(CDGFluids.GASOLINE.getBucket().get());
                         output.accept(CDGFluids.PLANT_OIL.getBucket().get());
                         output.accept(CDGFluids.ETHANOL.getBucket().get());
-                        output.accept(CDGItems.LIGHTER.get());
-                        output.accept(CDGItems.CHEMICAL_SPRAYER.get());
-                        output.accept(CDGItems.CHEMICAL_SPRAYER_LIGHTER.get());
                         output.accept(CDGItems.TRACK_LAYERS_BAG.get());
                         output.accept(TrackLayersBagItem.full());
                         MoldType.types.forEach(mt -> {
