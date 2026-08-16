@@ -1,7 +1,6 @@
 package com.jesz.createdieselgenerators;
 
 import com.jesz.createdieselgenerators.content.distillation.DistillationControllerItem;
-import com.jesz.createdieselgenerators.content.molds.MoldItem;
 import com.jesz.createdieselgenerators.content.tools.OilScannerItem;
 import com.jesz.createdieselgenerators.content.tools.hammer.HammerItem;
 import com.jesz.createdieselgenerators.content.tools.wire_cutters.WireCuttersItem;
@@ -32,8 +31,6 @@ public class CDGItems {
             .onRegister(TrackLayersBagItem::registerModelOverrides)
             .model(TrackLayersBagItem::addOverrideModels)
             .register();
-
-    public static final ItemEntry<MoldItem> MOLD = REGISTRATE.item("mold", MoldItem::new).register();
 
     public static final ItemEntry<HammerItem> HAMMER = REGISTRATE.item("hammer", HammerItem::new)
             .properties(p -> p.durability(128))

@@ -231,7 +231,6 @@
   "item.createdieselgenerators.lighter.tooltip.summary": "A _Lighter_. Fill with _Liquid Fuel_ using a _spout_ to use.",
   "item.createdieselgenerators.lime_cement_bucket": "Lime Cement Bucket",
   "item.createdieselgenerators.magenta_cement_bucket": "Magenta Cement Bucket",
-  "item.createdieselgenerators.mold": "Mold",
   "item.createdieselgenerators.oil_barrel.tooltip.behaviour1": "_Dyes_ the block.",
   "item.createdieselgenerators.oil_barrel.tooltip.condition1": "When R-Clicked with a dye.",
   "item.createdieselgenerators.oil_barrel.tooltip.summary": "Stores _Fluids_ for you. Can be placed both _horizontally_ and _vertically_.",

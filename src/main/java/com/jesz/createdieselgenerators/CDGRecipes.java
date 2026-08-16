@@ -3,9 +3,6 @@ package com.jesz.createdieselgenerators;
 import com.jesz.createdieselgenerators.content.basin_lid.BasinFermentingRecipe;
 import com.jesz.createdieselgenerators.content.bulk_fermenter.BulkFermentingRecipe;
 import com.jesz.createdieselgenerators.content.distillation.DistillationRecipe;
-import com.jesz.createdieselgenerators.content.molds.CastingRecipe;
-import com.jesz.createdieselgenerators.content.molds.CompressionMoldingRecipe;
-import com.jesz.createdieselgenerators.content.molds.MoldRecipeParams;
 import com.jesz.createdieselgenerators.content.tools.hammer.HammerRecipe;
 import com.jesz.createdieselgenerators.content.tools.wire_cutters.WireCuttingRecipe;
 import com.simibubi.create.content.kinetics.deployer.ItemApplicationRecipe;
@@ -32,8 +29,6 @@ public enum CDGRecipes implements IRecipeTypeInfo {
     BASIN_FERMENTING(BasinFermentingRecipe::new),
     BULK_FERMENTING(BulkFermentingRecipe::new),
     DISTILLATION(DistillationRecipe::new),
-    COMPRESSION_MOLDING(CompressionMoldingRecipe.Serializer::new),
-    CASTING(CastingRecipe.Serializer::new),
     WIRE_CUTTING(WireCuttingRecipe::new),
     HAMMERING(HammerRecipe::new);
 

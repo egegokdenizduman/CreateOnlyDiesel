@@ -1,7 +1,6 @@
 package com.jesz.createdieselgenerators;
 
 import com.jesz.createdieselgenerators.compat.strut_your_stuff.StrutYourStuffRegistryEntries;
-import com.jesz.createdieselgenerators.content.molds.MoldType;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
@@ -39,7 +38,6 @@ public class CreateDieselGenerators
         CDGBlockEntityTypes.register();
         CDGSoundEvents.register(modEventBus);
         CDGRecipes.register(modEventBus);
-        MoldType.register();
         CDGMountedStorageTypes.register();
         CDGCreativeTab.register(modEventBus);
         CDGDataComponents.register(modEventBus);

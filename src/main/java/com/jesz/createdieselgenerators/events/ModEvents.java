@@ -12,8 +12,6 @@ import com.jesz.createdieselgenerators.content.diesel_engine.huge.HugeDieselEngi
 import com.jesz.createdieselgenerators.content.diesel_engine.modular.ModularDieselEngineBlockEntity;
 import com.jesz.createdieselgenerators.content.diesel_engine.normal.DieselEngineBlockEntity;
 import com.jesz.createdieselgenerators.content.distillation.DistillationTankBlockEntity;
-import com.jesz.createdieselgenerators.content.molds.BasinSpoutCasting;
-import com.jesz.createdieselgenerators.content.molds.MoldType;
 import com.jesz.createdieselgenerators.content.pumpjack.PumpjackHoleBlockEntity;
 import com.jesz.createdieselgenerators.content.tools.FueledToolItem;
 import com.jesz.createdieselgenerators.content.track_layers_bag.TrackLayersBagComponent;
@@ -96,10 +94,6 @@ public class ModEvents {
     public static void onModelRegistry(ModelEvent.RegisterAdditional event){
 
         event.register(ModelResourceLocation.standalone(CreateDieselGenerators.rl("block/girder_strut/andesite_girder")));
-
-        for (MoldType type : MoldType.types)
-            event.register(new ModelResourceLocation(type.getModelId(), ModelResourceLocation.STANDALONE_VARIANT));
-
     }
 
     @SubscribeEvent
@@ -137,15 +131,6 @@ public class ModEvents {
     public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
         CDGItems.HAMMER.get().registerExtension(event);
         CDGItems.WIRE_CUTTERS.get().registerExtension(event);
-        CDGItems.MOLD.get().registerExtension(event);
-    }
-
-    @SubscribeEvent
-    @OnlyIn(Dist.CLIENT)
-    public static void onModelBake(ModelEvent.BakingCompleted event) {
-        Map<ModelResourceLocation, BakedModel> models = event.getModels();
-        for (MoldType type : MoldType.types)
-            type.model = models.get(new ModelResourceLocation(type.getModelId(), ModelResourceLocation.STANDALONE_VARIANT));
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -163,7 +148,6 @@ public class ModEvents {
     public static void setup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             BlockSpoutingBehaviour.BY_BLOCK_ENTITY.register(CDGBlockEntityTypes.CANISTER.get(), new SpoutCanisterFilling());
-            BlockSpoutingBehaviour.BY_BLOCK_ENTITY.register(AllBlockEntityTypes.BASIN.get(), new BasinSpoutCasting());
             BulkFermenterUnpackingHandler.register();
         });
     }

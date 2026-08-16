@@ -6,15 +6,11 @@
   "refmap": "createdieselgenerators.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "BasinRecipeMixin",
-    "MechanicalPressBlockEntityMixin",
     "ShaftBlockMixin",
     "UseOnContextInvoker",
     "SableAssemblyMixin"
   ],
-  "client": [
-    "BasinRendererMixin"
-  ],
+  "client": [],
   "injectors": {
     "defaultRequire": 1
   }

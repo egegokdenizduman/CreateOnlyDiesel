@@ -1,12 +1,10 @@
 package com.jesz.createdieselgenerators;
 
 import com.jesz.createdieselgenerators.compat.strut_your_stuff.StrutYourStuffRegistryEntries;
-import com.jesz.createdieselgenerators.content.molds.MoldType;
 import com.jesz.createdieselgenerators.content.track_layers_bag.TrackLayersBagItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -49,11 +47,6 @@ public class CDGCreativeTab {
                         output.accept(CDGFluids.ETHANOL.getBucket().get());
                         output.accept(CDGItems.TRACK_LAYERS_BAG.get());
                         output.accept(TrackLayersBagItem.full());
-                        MoldType.types.forEach(mt -> {
-                            ItemStack moldStack = CDGItems.MOLD.asStack();
-                            moldStack.set(CDGDataComponents.MOLD_TYPE, mt.getId());
-                            output.accept(moldStack);
-                        });
                         for (var fluid : CDGFluids.CONCRETE)
                             output.accept(fluid.getBucket().orElseThrow());
                     })

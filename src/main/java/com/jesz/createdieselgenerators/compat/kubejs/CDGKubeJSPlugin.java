@@ -21,7 +21,6 @@ import java.util.List;
 
 public class CDGKubeJSPlugin implements KubeJSPlugin {
     public static EventGroup GROUP = EventGroup.of("CDGEvents");
-    public static EventHandler MOLDS = GROUP.startup("molds", () -> MoldEventJS.class);
     public static EventHandler OIL_CHUNKS = GROUP.server("oilAmount", () -> GetChunkOilAmountEventJS.class);
     static {
         OIL_CHUNKS.hasResult();
@@ -39,16 +38,6 @@ public class CDGKubeJSPlugin implements KubeJSPlugin {
         filter.deny(CDGKubeJSPlugin.class);
     }
 
-    public static void registerMolds(){
-        MoldEventJS event = new MoldEventJS();
-        MOLDS.post(event);
-    }
-
-    @Override
-    public void initStartup() {
-        registerMolds();
-    }
-
     public static int calculateOilChunks(List<Holder<Biome>> biomes, ChunkPos chunkPos, long seed) {
         if (!OIL_CHUNKS.hasListeners())
             return -1;
@@ -63,14 +52,6 @@ public class CDGKubeJSPlugin implements KubeJSPlugin {
         event.biomes = stringBiomes;
 
         return ((Double)OIL_CHUNKS.post(event).value()).intValue();
-    }
-
-
-    @Override
-    public void generateLang(LangKubeEvent event) {
-        MoldEventJS.addedMolds.forEach((rl, name) -> {
-            event.add("mold." + rl.getNamespace() + "." + rl.getPath(), name);
-        });
     }
 
     JsonElement generateTextureModel(ResourceLocation rl) {

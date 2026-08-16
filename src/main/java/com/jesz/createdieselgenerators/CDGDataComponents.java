@@ -26,9 +26,6 @@ public class CDGDataComponents {
     public static final DataComponentType<TrackLayersBagItemDataComponent> TRACKS = register("tracks",
             builder -> builder.persistent(TrackLayersBagItemDataComponent.CODEC).networkSynchronized(TrackLayersBagItemDataComponent.STREAM_CODEC));
 
-    public static final DataComponentType<ResourceLocation> MOLD_TYPE = register("mold_type",
-            builder -> builder.persistent(ResourceLocation.CODEC).networkSynchronized(ResourceLocation.STREAM_CODEC));
-
     public static final DataComponentType<SandPaperItemComponent> PROCESSING_ITEM = register("processing_item",
             builder -> builder.persistent(SandPaperItemComponent.CODEC).networkSynchronized(SandPaperItemComponent.STREAM_CODEC));
 
